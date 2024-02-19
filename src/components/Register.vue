@@ -10,7 +10,8 @@
                 </div>
                 <div class="mb-2 flex flex-col">
                     <Label text="Password" for="password" />
-                    <InputField id="password" placeholder="Password" v-model="formData.password" :error="errors.password" />
+                    <PasswordField id="password" placeholder="Password" v-model="formData.password"
+                        :error="errors.password" />
                     <ErrorMessage :error="errors.password" :msg="message.password" />
                 </div>
                 <div class="mb-2 flex flex-col">
@@ -29,7 +30,7 @@
                 </div>
                 <div class="mb-2 flex flex-col">
                     <Label text="Confirm Password" for="password_confirmation" />
-                    <InputField type="password" id="password_confirmation" placeholder="Re-enter your password"
+                    <PasswordField type="password" id="password_confirmation" placeholder="Re-enter your password"
                         v-model="formData.password_confirmation" :error="errors.confirmPassword" />
                     <ErrorMessage :error="errors.confirmPassword" :msg="message.confirmPassword" />
                 </div>
@@ -47,6 +48,7 @@ import axios from 'axios';
 // Form Components
 import FormContainer from '@/components/FormComponents/FormContainer.vue';
 import InputField from '@/components/FormComponents/InputField.vue';
+import PasswordField from '@/components/FormComponents/PasswordField.vue';
 import Label from '@/components/FormComponents/Labels.vue';
 import Button from '@/components/FormComponents/Buttons.vue';
 import ErrorMessage from './FormComponents/ErrorMessage.vue';

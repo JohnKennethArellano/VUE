@@ -12,8 +12,7 @@
                 <span
                     class="w-auto text-sm font-bold  text-red-600 cursor-pointer hover:text-red-400 transition-all">Forgot?</span>
             </div>
-            <InputField type="password" id="password" placeholder="Enter password" v-model="password"
-                :error="errors.password" />
+            <PasswordField id="password" placeholder="Enter password" v-model="password" :error="errors.password" />
             <ErrorMessage :error="errors.password" :msg="message.password" />
         </div>
         <Button type="submit" text="Submit" />
@@ -28,6 +27,7 @@ import axios from 'axios'
 // import Swal from 'sweetalert2'
 // Form Components
 import FormContainer from '@/components/FormComponents/FormContainer.vue'
+import PasswordField from '@/components/FormComponents/PasswordField.vue'
 import InputField from '@/components/FormComponents/InputField.vue'
 import Label from '@/components/FormComponents/Labels.vue'
 import Button from '@/components/FormComponents/Buttons.vue'
@@ -48,7 +48,7 @@ const message = ref({
 const HandleInput = async (e) => {
     e.preventDefault();
     let isValid = true;
-    if (!email.value.trim()) {
+    if (email.value.trim() == "") {
         errors.value.email = false;
         message.value.email = "Email required";
         isValid = false
@@ -56,7 +56,7 @@ const HandleInput = async (e) => {
         errors.value.email = true;
         message.value.email = "";
     }
-    if (!password.value.trim()) {
+    if (password.value.trim() == "") {
         errors.value.password = false;
         message.value.password = "Password required";
         isValid = false
