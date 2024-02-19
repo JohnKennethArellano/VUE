@@ -2,7 +2,7 @@
     <FormContainer @submit="HandleInput" formTitle="Login to your account">
         <slot />
         <div class="mb-4 flex flex-col">
-            <Label text="Employee ID" for="email" />
+            <Label text="Employee IDs" for="email" />
             <InputField id="email" placeholder="Enter email" v-model="email" :error="errors.email" />
             <ErrorMessage :error="errors.email" :msg="message.email" />
         </div>
